@@ -11,7 +11,6 @@ root.render(
     <BrowserRouter>
         <Header/>
         <App/>
-        test
         <Footer/>
     </BrowserRouter>
 );

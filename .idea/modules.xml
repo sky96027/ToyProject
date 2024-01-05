@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ToyProject.iml" filepath="$PROJECT_DIR$/.idea/ToyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend.iml" filepath="$PROJECT_DIR$/.idea/modules/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/react-board.main.iml" filepath="$PROJECT_DIR$/.idea/modules/react-board.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/react-board.test.iml" filepath="$PROJECT_DIR$/.idea/modules/react-board.test.iml" />
     </modules>
   </component>
 </project>

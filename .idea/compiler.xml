@@ -17,7 +17,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.2.0/c118a8d5f464983d7298b0f849cb9278f08d1f1e/spring-boot-configuration-processor-3.2.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
         </processorPath>
-        <module name="backend.main" />
+        <module name="ToyProject.backend.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -43,7 +44,9 @@ public class BoardServiceImpl implements BoardService {
             paramMap.put("sk", search.getSk());
             paramMap.put("sv", search.getSv());
 
-            List<BoardEntity> boardList = boardRepository.findAll();
+            Sort sort = Sort.by(Sort.Direction.DESC, "bdNo");
+
+            List<BoardEntity> boardList = boardRepository.findAll(sort);
             Pagination pagination = new Pagination(
                     (int) boardCount,      // 연습 프로젝트이기 때문에 long대신 int 사용
                     page,
@@ -77,6 +80,8 @@ public class BoardServiceImpl implements BoardService {
     public Header<BoardEntity> insertBoard(BoardSaveDto boardSaveDto){
         try {
             BoardEntity boardEntity = boardSaveDto.toEntity();
+            boardEntity.setBdDate(LocalDateTime.now());
+
             boardRepository.save(boardEntity);
 
             logger.info("[SUCCESS] insertBoard : " + boardEntity.getBdNo());

@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.data.domain.PageRequest;
 @Service("BoardService")
 public class BoardServiceImpl implements BoardService {
 
@@ -46,7 +46,9 @@ public class BoardServiceImpl implements BoardService {
 
             Sort sort = Sort.by(Sort.Direction.DESC, "bdNo");
 
-            List<BoardEntity> boardList = boardRepository.findAll(sort);
+            PageRequest pageRequest = PageRequest.of(page - 1, size, sort);
+
+            List<BoardEntity> boardList = boardRepository.findAll(pageRequest).getContent();
             Pagination pagination = new Pagination(
                     (int) boardCount,      // 연습 프로젝트이기 때문에 long대신 int 사용
                     page,

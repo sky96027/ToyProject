@@ -24,10 +24,10 @@ const BoardDetail = () => {
                 <h2>로딩 중...</h2>
             ) : (
                 <Board
-                    no={board.bdNo}
-                    title={board.bdTitle}
-                    content={board.bdContent}
-                    date={board.bdDate}
+                    bdNo={board.bdNo}
+                    bdTitle={board.bdTitle}
+                    bdContent={board.bdContent}
+                    bdDate={board.bdDate}
                 />
             )}
         </div>

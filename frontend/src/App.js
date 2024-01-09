@@ -5,6 +5,9 @@ import Home from "./routes/Home";
 import React from "react";
 import BoardDetail from "./routes/BoardDetail";
 import BoardWrite from "./routes/BoardWrite";
+import BoardUpdate from "./routes/BoardUpdate";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
             <Route path="/board" element={<BoardList/>}/>
             <Route path="/board/:bdNo" element={<BoardDetail/>}/>
             <Route path="/write" element={<BoardWrite />} />
+            <Route path="/update/:bdNo" element={<BoardUpdate />} />
         </Routes>
     );
 }

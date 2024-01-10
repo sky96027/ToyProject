@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import {ButtonGroup, ButtonToolbar} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from 'react-bootstrap/Form';
 
 const BoardList = () => {
     const navigate = useNavigate();
@@ -113,29 +113,30 @@ const BoardList = () => {
             </Table>
 
             <div>
-                <ButtonToolbar aria-label="Toolbar with button groups">
+                <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
                     <ButtonGroup className="me-2" aria-label="First group">
-                        <Button onClick={onClick} value={1}>&lt;&lt;</Button>
-                        <Button onClick={onClick} value={prevBlock}>&lt;</Button>
+                        <Button variant="secondary" onClick={onClick} value={1}>&lt;&lt;</Button>
+                        <Button variant="secondary" onClick={onClick} value={prevBlock}>&lt;</Button>
                         {pageList.map((page, index) => (
-                            <Button key={index} onClick={onClick} value={page}>
+                            <Button variant="secondary" key={index} onClick={onClick} value={page}>
                                 {page}
                             </Button>
                         ))}
-                        <Button onClick={onClick} value={nextBlock}>&gt;</Button>
-                        <Button onClick={onClick} value={lastPage}>&gt;&gt;</Button>
+                        <Button variant="secondary" onClick={onClick} value={nextBlock}>&gt;</Button>
+                        <Button variant="secondary" onClick={onClick} value={lastPage}>&gt;&gt;</Button>
                     </ButtonGroup>
                 </ButtonToolbar>
             </div>
             <br/>
             <div>
-                <select name="sk" onChange={onChange}>
-                    <option value="">-선택-</option>
+                <Form.Select aria-label="Default select example" name="sk" onChange={onChange}>
+                    <option value="">선택</option>
                     <option value="bdTitle">제목</option>
                     <option value="bdContent">내용</option>
-                </select>
+                </Form.Select>
                 <input type="text" name="sv" id="" onChange={onChange}/>
                 <button onClick={onSearch}>검색</button>
+
             </div>
             <br/>
             <div>

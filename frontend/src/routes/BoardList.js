@@ -128,6 +128,7 @@ const BoardList = () => {
                 </ButtonToolbar>
             </div>
             <br/>
+
             <div>
                 <Form.Select aria-label="Default select example" name="sk" onChange={onChange}>
                     <option value="">선택</option>

@@ -137,7 +137,6 @@ const BoardList = () => {
                 </Form.Select>
                 <input type="text" name="sv" id="" onChange={onChange}/>
                 <button onClick={onSearch}>검색</button>
-
             </div>
             <br/>
             <div>
